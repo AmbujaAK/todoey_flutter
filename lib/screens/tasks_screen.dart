@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/components/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class TasksScreen extends StatelessWidget {
                 CircleAvatar(
                   radius: 30.0,
                   backgroundColor: Colors.white,
-                  child: Icon(Icons.list,color: Colors.lightBlueAccent,size: 30.0,),
+                  child: Icon(Icons.list,color: Colors.lightBlueAccent,size: 36.0,),
                 ),
                 SizedBox(height: 10.0,),
                 Text(
@@ -40,6 +41,7 @@ class TasksScreen extends StatelessWidget {
           Expanded(
             child: Container(
               height: 300.0,
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -47,12 +49,14 @@ class TasksScreen extends StatelessWidget {
                       topRight: Radius.circular(20.0)
                   )
               ),
+              child: TasksList(),
             ),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
+        onPressed: (){},
         child: Icon(
           Icons.add,
           color: Colors.white,
@@ -61,3 +65,4 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
+

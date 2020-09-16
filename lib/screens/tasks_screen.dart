@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todoey_flutter/components/tasks_list.dart';
-import 'package:todoey_flutter/models/task.dart';
 import 'add_task_screen.dart';
 import 'package:todoey_flutter/models/task_data.dart';
 import 'package:provider/provider.dart';
 
-class TasksScreen extends StatefulWidget {
-
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
+class TasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -73,12 +66,7 @@ class _TasksScreenState extends State<TasksScreen> {
             isScrollControlled: true,
             builder: (context) => SingleChildScrollView(
               padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: AddTaskScreen((newTaskTitle){
-                setState(() {
-                  // tasks.add(Task(name: newTaskTitle));
-                });
-                Navigator.pop(context);
-              }),
+              child: AddTaskScreen(),
             ),
           );
         },
